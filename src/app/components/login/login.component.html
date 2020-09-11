@@ -9,7 +9,7 @@
               <p class="text-center lead">Inicia sesion ingresando tu correo electronico</p>
               <div class="main-login">
                 <form [formGroup]="authenticationForm" (ngSubmit)="onSubmit()">
-                  <div class="form-group">
+                  <div class="form-group mb-4">
                     <input type="email" class="form-control" formControlName="email" placeholder="Email address">
                     <div *ngIf="email.invalid && (email.dirty || email.touched)">
                       <small *ngIf="email.errors?.required" class="text-danger">Email is required</small>
@@ -17,13 +17,19 @@
                         address</small>
                     </div>
                   </div>
-                  <div class="form-group">
+                  <div class="form-group  mb-4">
                     <input type="password" class="form-control" formControlName="password" placeholder="Password">
                     <div *ngIf="password.invalid && (password.dirty || password.touched)">
                       <small *ngIf="password.errors?.required" class="text-danger">Password is required</small>
                     </div>
                   </div>
-                  <button type="submit" class="btn btn-primary" [disabled]="!authenticationForm.valid">Submit</button>
+                  <button type="submit" class="btn btn-primary" [disabled]="!authenticationForm.valid">Log In</button>
+
+                  <div class="row pt-3"> 
+                    <div class="col-12">
+                   <p class="text-center">Forgot your password?</p>
+                  </div> 
+                   </div>
                 </form>
               </div>
             </div>

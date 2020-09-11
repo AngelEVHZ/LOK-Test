@@ -11,7 +11,7 @@ export class AuthenticationService {
   constructor(private http: HttpClient) { }
 
 
-  async login(autentication: AuthenticationDto): Promise<any> {
+  async login(autentication: AuthenticationDto): Promise<boolean> {
     const response: AuthenticationResponseDto = await this.http.post(`${ENDPOINT.RE}/login`, autentication).toPromise() as AuthenticationResponseDto;
     this.writeSession(response);
     return true;

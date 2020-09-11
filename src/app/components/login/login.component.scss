@@ -18,7 +18,12 @@
 	}
 	.top-login{
 		flex:2;
-		padding:70px;
+		@media (max-width:500px) {
+			padding:70px 20px;
+		}
+		@media (min-width:500px) {
+			padding:70px;
+		}
 		background: #fafafa;
 		color: black;
 		border-radius:5px;
@@ -36,8 +41,8 @@
 	}
 	.login-card{
 		width: 100%;
-		max-width:500px;
-		height: 500px;
+		max-width:550px;
+		height: 450px;
 		margin: auto;
 		background-color: white;
 		border-radius:5px;

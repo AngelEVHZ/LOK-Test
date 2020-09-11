@@ -3,6 +3,8 @@ import { AuthenticationService } from "@services/authentication.service";
 import { AuthenticationDto } from '../../dto/authentication/authentication.dto';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2'
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -20,15 +22,15 @@ export class LoginComponent implements OnInit {
         Validators.required,
         Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$")
       ]),
-      password: new FormControl('',[
+      password: new FormControl('', [
         Validators.required
       ]),
     });
 
-
   }
 
   async ngOnInit() {
+
   }
 
 
@@ -39,10 +41,19 @@ export class LoginComponent implements OnInit {
     try {
       const response = await this.authenticationService.login(authenticationObject);
       if (response) {
+        await Swal.fire({
+          title: 'Welcome!',
+          icon: 'success'
+        });
         this.router.navigate(["home"]);
       }
-    } catch (error) {
-      console.log(error);
+    } catch (err) {
+      const msj = err.error.error;
+      Swal.fire(
+        'Error logging in',
+        "The user or password is incorrect",
+        'error'
+      )
     }
   }
 
