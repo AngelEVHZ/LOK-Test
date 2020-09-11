@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { UserService } from "@services/user.service";
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private readonly userService: UserService) { }
 
-  ngOnInit(): void {
+  async ngOnInit(){
+    await this.fetchUsers();
   }
 
+  async fetchUsers() {
+    const users = await this.userService.getUsers();
+    console.log(users);
+  }
 }

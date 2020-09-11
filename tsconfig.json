@@ -10,6 +10,9 @@
       "@services/*": [
         "app/services/*"
       ],
+      "@dto/*": [
+        "app/dto/*"
+      ]
     },
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
