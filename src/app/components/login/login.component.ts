@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from "@services/authentication.service";
 import { AuthenticationDto } from '../../dto/authentication/authentication.dto';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
@@ -16,13 +16,19 @@ export class LoginComponent implements OnInit {
     private router: Router,) {
 
     this.authenticationForm = new FormGroup({
-      email: new FormControl(''),
-      password: new FormControl(''),
+      email: new FormControl('', [
+        Validators.required,
+        Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$")
+      ]),
+      password: new FormControl('',[
+        Validators.required
+      ]),
     });
+
+
   }
 
   async ngOnInit() {
-
   }
 
 
@@ -40,4 +46,6 @@ export class LoginComponent implements OnInit {
     }
   }
 
+  get email() { return this.authenticationForm.get('email'); }
+  get password() { return this.authenticationForm.get('password'); }
 }
