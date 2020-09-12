@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-
+import { UserDto } from "@dto/user.dto";
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -7,14 +7,14 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
 
-  @Input() public profile;
+  @Input() public user: UserDto;
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.profile);
+
   }
 
   getName(){
-    return this.profile.first_name + " " + this.profile.last_name;
+    return this.user.first_name + " " + this.user.last_name;
   }
 }

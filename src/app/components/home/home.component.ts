@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from "@services/user.service";
+import { UserDto } from "@dto/user.dto";
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -7,9 +8,10 @@ import { UserService } from "@services/user.service";
 })
 export class HomeComponent implements OnInit {
 
-  public profiles: any;
-  constructor(private readonly userService: UserService) { 
-    this.profiles = [];
+  public users: Array<UserDto>;
+  showAsideBar = false;
+  constructor(private readonly userService: UserService) {
+    this.users = [];
   }
 
   async ngOnInit(){
@@ -17,7 +19,15 @@ export class HomeComponent implements OnInit {
   }
 
   async fetchUsers() {
-    this.profiles = await this.userService.getUsers();
-    
+    this.users = await this.userService.getUsers();
+  }
+
+
+  editUser() {
+    this.showAsideBar = true;
+  }
+
+  hideBar() {
+    this.showAsideBar = false;
   }
 }

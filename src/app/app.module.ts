@@ -13,6 +13,7 @@ import { BusyComponent } from "./shared/busy/busy.component";
 import { HttpClientInterceptor } from './config/http.interceptor';
 import { HeaderComponent } from './shared/header/header.component';
 import { ProfileComponent } from './shared/profile/profile.component';
+import { AsideBarComponent } from './shared/aside-bar/aside-bar.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ProfileComponent } from './shared/profile/profile.component';
     AlbumComponent,
     BusyComponent,
     HeaderComponent,
-    ProfileComponent
+    ProfileComponent,
+    AsideBarComponent
   ],
   imports: [
     HttpClientModule,
