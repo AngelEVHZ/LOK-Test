@@ -11,6 +11,8 @@ import { AuthenticationService } from './services/authentication.service';
 import { BusyComponent } from "./shared/busy/busy.component";
 
 import { HttpClientInterceptor } from './config/http.interceptor';
+import { HeaderComponent } from './shared/header/header.component';
+import { ProfileComponent } from './shared/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { HttpClientInterceptor } from './config/http.interceptor';
     HomeComponent,
     LoginComponent,
     AlbumComponent,
-    BusyComponent
+    BusyComponent,
+    HeaderComponent,
+    ProfileComponent
   ],
   imports: [
     HttpClientModule,

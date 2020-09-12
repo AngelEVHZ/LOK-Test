@@ -7,14 +7,17 @@ import { UserService } from "@services/user.service";
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private readonly userService: UserService) { }
+  public profiles: any;
+  constructor(private readonly userService: UserService) { 
+    this.profiles = [];
+  }
 
   async ngOnInit(){
     await this.fetchUsers();
   }
 
   async fetchUsers() {
-    const users = await this.userService.getUsers();
-    console.log(users);
+    this.profiles = await this.userService.getUsers();
+    
   }
 }

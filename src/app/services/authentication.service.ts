@@ -17,6 +17,13 @@ export class AuthenticationService {
     return true;
   }
 
+  logOut() {
+    const session: AuthenticationResponseDto = JSON.parse(localStorage.getItem("$session"));
+    if (session) {
+      localStorage.removeItem('$session');
+    }
+  }
+
   writeSession(authenticationResponse: AuthenticationResponseDto): void {
     localStorage.setItem("$session", JSON.stringify(authenticationResponse));
   }

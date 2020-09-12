@@ -1,0 +1,26 @@
+.header {
+	padding-top: 0!important;
+	li {
+		:hover{
+			background: rgb(202, 206, 209);
+			height: 100%;
+		}
+		width: 85px;
+	}
+
+	a {
+		height: 100%;
+		text-align: center;
+	}
+	.active {
+		background: rgb(202, 206, 209);
+	}
+
+	h1{
+		font-weight: bold;
+		text-transform: uppercase;
+		color: #999ba3 !important;
+		font-weight: 500 !important;
+		font-size: 30px;
+	}
+}
