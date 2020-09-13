@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from "@services/authentication.service";
-import { AuthenticationDto } from '../../dto/authentication/authentication.dto';
+import { AuthenticationDto } from '@dto/authentication/authentication.dto';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',

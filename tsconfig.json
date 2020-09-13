@@ -12,6 +12,12 @@
       ],
       "@dto/*": [
         "app/dto/*"
+      ],
+      "@shared/*": [
+        "app/shared/*"
+      ],
+      "@config/*": [
+        "app/config/*"
       ]
     },
     "outDir": "./dist/out-tsc",

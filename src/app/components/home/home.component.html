@@ -4,8 +4,8 @@
     <div class="row mt-5">
       <div class="col">
         <div class="d-flex flex-wrap">
-          <div class="p-3" *ngFor="let user of users">
-            <app-profile [user]="user" (click)="editUser()"></app-profile>
+          <div class="p-3" *ngFor="let user of users;let i = index" style="width: 18rem">
+            <app-profile [user]="user" [index]="i" (click)="editUser(user)"></app-profile>
           </div>
         </div>
       </div>

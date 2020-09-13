@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { ENDPOINT } from "../config/constants";
 import { HttpClient } from '@angular/common/http';
-import { AuthenticationDto } from "../dto/authentication/authentication.dto";
-import { AuthenticationResponseDto } from "../dto/authentication/authentication-response.dto";
+import { AuthenticationDto } from "@dto/authentication/authentication.dto";
+import { AuthenticationResponseDto } from "@dto/authentication/authentication-response.dto";
 @Injectable({
   providedIn: 'root'
 })

@@ -1,16 +1,36 @@
-<div class="card" style="width: 18rem;">
-  <img class="card-img-top rounded mx-auto d-block my-4" [src]="user.avatar">
-  <div class="card-body">
-    <h2 class="card-title text-center">{{getName()}}</h2>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+<div *ngIf="user && delay">
+  <div class="card fadeIn " [style]="'animation-delay: ' + delay + ';'  ">
+    <img class="card-img-top rounded mx-auto d-block my-4" [src]="user.avatar">
+    <div class="card-body">
+      <h2 class="card-title text-center">{{getName()}}</h2>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+        content.</p>
+    </div>
+
+    <div *ngIf="isEdition">
+      <ul class="list-group list-group-flush">
+
+        <li class="list-group-item" *ngFor="let post of getTopPosts();">
+          <div class="row">
+            <p>{{post.title}}<p>
+            <p>{{post.body}}</p>
+          </div>
+          <div class="row d-flex justify-content-end">
+            <div class="col-2">
+              <button type="button" class="btn " (click)="removePost(post)">
+                <i class="fa fa-trash-o fa-2x" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <div class="card-body">
+        <a href="#" class="card-link">Card link</a>
+        <a href="#" class="card-link">Another link</a>
+      </div>
+
+
+
+    </div>
   </div>
-  <!-- <ul class="list-group list-group-flush">
-    <li class="list-group-item">Cras justo odio</li>
-    <li class="list-group-item">Dapibus ac facilisis in</li>
-    <li class="list-group-item">Vestibulum at eros</li>
-  </ul> -->
-  <!-- <div class="card-body">
-    <a href="#" class="card-link">Card link</a>
-    <a href="#" class="card-link">Another link</a>
-  </div> -->
 </div>

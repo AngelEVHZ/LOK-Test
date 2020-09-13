@@ -1,4 +1,19 @@
 <div class="back-ground" [style.display]="isHidden ? 'none' : 'block'"></div>
 <div class="wrapper_container" [ngClass]="{ show: !isHidden }">
-<button class="" (click)="hide()"> ESCIBDER</button>
+
+  <div class="row">
+  <div class="close">
+    <button type="button" class="btn " (click)="hide()">
+      <i class="fa fa-window-close fa-2x" aria-hidden="true"></i>
+    </button>
+  </div>
+</div>
+  <div class="row">
+    <div class="col-12">
+      <div *ngIf="!isHidden && user">
+        <app-profile [user]="user" [isEdition]="true"></app-profile>
+      </div>
+    </div>
+  </div>
+
 </div>
