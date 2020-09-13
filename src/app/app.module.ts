@@ -17,6 +17,7 @@ import { AsideBarComponent } from './shared/aside-bar/aside-bar.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { PaginationComponent } from './shared/pagination/pagination.component';
 import { MosaicComponent } from './shared/mosaic/mosaic.component';
+import { CarouselComponent } from './shared/carousel/carousel.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { MosaicComponent } from './shared/mosaic/mosaic.component';
     AsideBarComponent,
     FooterComponent,
     PaginationComponent,
-    MosaicComponent
+    MosaicComponent,
+    CarouselComponent
   ],
   imports: [
     HttpClientModule,

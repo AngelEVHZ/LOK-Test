@@ -1,0 +1,8 @@
+<ul class="list-group list-group-horizontal">
+  <li class="list-group-item"  *ngFor="let item of list;let i = index" (click)="selectItem(item)">
+    <div>
+      <img class="rounded mx-auto d-block my-4" [src]="item.avatar">
+      <h5 class="card-text">{{item.first_name + ' ' + item.last_name}}</h5>
+    </div>
+  </li>
+</ul>
