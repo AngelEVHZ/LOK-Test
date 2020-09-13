@@ -6,11 +6,11 @@
   </button>
   <div class="collapse navbar-collapse w-100  dual-collapse2 align-self-start" id="navbarTogglerDemo02">
     <ul class="navbar-nav mt-0 mt-lg-0 ml-auto">
-      <li class="nav-item active ">
-          <a class="nav-link" href="#">Home</a>
+      <li [class]="  isActivePage('home') ? ' nav-item active' : 'nav-item' " [routerLink]="['/home']"  >
+          <a class="nav-link">Home</a>
       </li>
-      <li class="nav-item">
-          <a class="nav-link" href="#"> Album</a>
+      <li [class]=" isActivePage('album') ? ' nav-item active' : 'nav-item' " [routerLink]="['/album']">
+          <a class="nav-link"> Album</a>
       </li>
       <li class="nav-item">
         <a class="nav-link " (click)="logOut()"> <i class="fa fa-sign-out fa-2x" aria-hidden="true"></i> </a>
