@@ -25,6 +25,7 @@ export class HomeComponent implements OnInit {
   }
 
   async fetchUsers(page?: number) {
+    this.users = [];
     const paginationUsers: PaginationUserDto = await this.userService.getUsers(page);
     this.totalPages = paginationUsers.total_pages;
     this.users = paginationUsers.data;
@@ -56,8 +57,7 @@ export class HomeComponent implements OnInit {
 
   async onSelectedPage(page){
     this.currentPage = page;
-  
-    document.getElementById( 'top-page' ).scrollIntoView();    
+    document.getElementById( 'top-page' ).scrollIntoView();
     await this.fetchUsers(this.currentPage);
   }
 }

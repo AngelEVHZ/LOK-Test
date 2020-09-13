@@ -16,6 +16,7 @@ import { ProfileComponent } from './shared/profile/profile.component';
 import { AsideBarComponent } from './shared/aside-bar/aside-bar.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { PaginationComponent } from './shared/pagination/pagination.component';
+import { MosaicComponent } from './shared/mosaic/mosaic.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { PaginationComponent } from './shared/pagination/pagination.component';
     ProfileComponent,
     AsideBarComponent,
     FooterComponent,
-    PaginationComponent
+    PaginationComponent,
+    MosaicComponent
   ],
   imports: [
     HttpClientModule,

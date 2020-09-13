@@ -1,2 +1,17 @@
 <app-header [currentPage]="'album'"></app-header>
+<div class="container-fluid" id="top-page">
+  <div class="container">
+    <div class="row mt-5 cards-container">
+      <div class="col">
+      <div *ngIf="currentAlbum">
+        <app-mosaic [album]="currentAlbum" ></app-mosaic>
+      </div>
+
+      </div>
+    </div>
+
+  </div>
+  <app-aside-bar [isHidden]="!showAsideBar" (hideBar)="hideBar()" (handleUserChange)="handleUserChange($event)">
+  </app-aside-bar>
+</div>
 <app-footer></app-footer>

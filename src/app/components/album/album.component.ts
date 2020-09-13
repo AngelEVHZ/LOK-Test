@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import {UserService} from "@services/user.service";
+import {AlbumDto} from "@dto/album/album.dto"
 @Component({
   selector: 'app-album',
   templateUrl: './album.component.html',
@@ -7,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AlbumComponent implements OnInit {
 
-  constructor() { }
+  currentAlbum: AlbumDto;
+ 
+  constructor(private readonly userService: UserService) { }
 
-  ngOnInit(): void {
+  async ngOnInit() {
+    const response = await this.userService.getAlbum(3);
+    const album = await this.userService.getPhotos(response[0]);
+    this.currentAlbum = album;
+
   }
+
+
+
+
+
+  
+
 
 }

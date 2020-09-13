@@ -1,0 +1,9 @@
+<div class="row">
+  <div class="col-12">
+    <div [class]="'mosaic-container ' + getMosaicClass(iteration) " *ngFor="let iteration of iterations">
+      <div [class]=" 'tile grow '+ getClass(i) " *ngFor="let photo of getPhotos(iteration);let i = index">
+        <img class=" mx-auto d-block mosaic" [src]="photo.url">
+      </div>
+    </div>
+  </div>
+</div>
