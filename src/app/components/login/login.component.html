@@ -1,4 +1,4 @@
-<div class="login">
+<div class="login bg-dark">
   <main>
     <div class="containet-fluid">
       <div class="row">
@@ -23,7 +23,7 @@
                       <small *ngIf="password.errors?.required" class="text-danger">Password is required</small>
                     </div>
                   </div>
-                  <button type="submit" class="btn btn-primary" [disabled]="!authenticationForm.valid">Log In</button>
+                  <button type="submit" class="btn btn-dark" [disabled]="!authenticationForm.valid">Log In</button>
 
                   <div class="row pt-3"> 
                     <div class="col-12">

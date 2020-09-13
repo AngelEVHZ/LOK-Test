@@ -1,7 +1,7 @@
 <app-header [currentPage]="'home'"></app-header>
-<div class="container-fluid">
+<div class="container-fluid" id="top-page">
   <div class="container">
-    <div class="row mt-5 ">
+    <div class="row mt-5 cards-container">
       <div class="col">
         <div class="d-flex flex-wrap d-flex justify-content-center">
           <div class="p-3" *ngFor="let user of users;let i = index" style="width: 20rem">
@@ -10,7 +10,13 @@
         </div>
       </div>
     </div>
+    <div class="row d-flex justify-content-center">
+      <div class="col-12  d-flex  justify-content-center">
+       <app-pagination [maxPages]="totalPages" [currentPage]="currentPage" (onSelectedPage)="onSelectedPage($event)"></app-pagination>
+      </div>
+    </div>
   </div>
-
-  <app-aside-bar [isHidden]="!showAsideBar" (hideBar)="hideBar()" (handleUserChange)="handleUserChange($event)"></app-aside-bar>
+  <app-aside-bar [isHidden]="!showAsideBar" (hideBar)="hideBar()" (handleUserChange)="handleUserChange($event)">
+  </app-aside-bar>
 </div>
+<app-footer></app-footer>

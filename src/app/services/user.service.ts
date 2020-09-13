@@ -3,6 +3,7 @@ import { ENDPOINT } from "../config/constants";
 import { HttpClient } from '@angular/common/http';
 import { UserDto } from "@dto/user/user.dto";
 import { PostDto } from "@dto/user/post.dto";
+import { PaginationUserDto } from "@dto/user/pagination-user.dto"
 @Injectable({
   providedIn: 'root'
 })
@@ -11,9 +12,10 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
 
-  async getUsers(): Promise<Array<UserDto>> {
-    const result: any = await this.http.get(`${ENDPOINT.RE}/users`).toPromise();
-    return result.data;
+  async getUsers(page?: number): Promise<PaginationUserDto> {
+    const params = page ? ("?page=" + page) : "";
+    const result = await this.http.get(`${ENDPOINT.RE}/users${params}`).toPromise();
+    return result as PaginationUserDto;
   }
 
   async getPosts(userId: number): Promise<Array<PostDto>> {

@@ -14,6 +14,8 @@ import { HttpClientInterceptor } from './config/http.interceptor';
 import { HeaderComponent } from './shared/header/header.component';
 import { ProfileComponent } from './shared/profile/profile.component';
 import { AsideBarComponent } from './shared/aside-bar/aside-bar.component';
+import { FooterComponent } from './shared/footer/footer.component';
+import { PaginationComponent } from './shared/pagination/pagination.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { AsideBarComponent } from './shared/aside-bar/aside-bar.component';
     BusyComponent,
     HeaderComponent,
     ProfileComponent,
-    AsideBarComponent
+    AsideBarComponent,
+    FooterComponent,
+    PaginationComponent
   ],
   imports: [
     HttpClientModule,

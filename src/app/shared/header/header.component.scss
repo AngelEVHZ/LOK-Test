@@ -1,6 +1,7 @@
 .header {
 	padding-top: 0!important;
 	li {
+		cursor: pointer;
 		:hover{
 			background: rgb(92, 94, 95);
 			height: 100%;
@@ -17,6 +18,7 @@
 	}
 
 	h1{
+		cursor: pointer;
 		font-weight: bold;
 		text-transform: uppercase;
 		color: #cecece !important;

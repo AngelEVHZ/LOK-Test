@@ -1,13 +1,12 @@
 
 .login{
-	background: rgb(34, 88, 204);
+	// background: rgb(34, 88, 204);
 	background-size: cover;
 	&:before{
 		content:'';
 		height:100%;
 		width:100%;
 		position:absolute;
-	 	background-color:rgba(0, 0, 0, 0.36);
 	}
 	.containet-fluid{
 		height:100vh;

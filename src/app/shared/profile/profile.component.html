@@ -1,59 +1,61 @@
 <div *ngIf="user && delay">
-  <div class="card fadeIn " [style]="'animation-delay: ' + delay + ';'  ">
-    <img class="card-img-top rounded mx-auto d-block my-4" [src]="user.avatar">
+  <div  [class]=" isEdition ? 'fadeIn' : 'fadeIn grow'" [style]="'animation-delay: ' + delay + ';'  ">
+    <div class="shadow p-3 mb-5 bg-white ">
+      <img class="card-img-top rounded mx-auto d-block my-4" [src]="user.avatar">
 
 
-    <div class="card-body">
-      <div *ngIf="!isEditingFileds">
-        <h2 class="card-title text-center">{{userFullName}}
-          <button *ngIf="isEdition" type="button" class="btn" (click)="handleEditionFields()">
-            <i class="fa fa-pencil fa-2x " aria-hidden="true"></i>
-          </button>
-        </h2>
-        <p class="card-text">{{userDescription}}</p>
-      </div>
-      <div *ngIf="isEditingFileds">
-        <div class="row d-flex justify-content-center">
-          <div class="col-6">
-            <input id="name" name="name" class="form-control" [(ngModel)]="userFullName">
-          </div>
-          <div class="col-2">
-            <button type="button" class="btn" (click)="saveChanges()">
-              <i class="fa fa fa-floppy-o fa-2x " aria-hidden="true"></i>
+      <div class="card-body">
+        <div *ngIf="!isEditingFileds">
+          <h2 class="card-title text-center">{{userFullName}}
+            <button *ngIf="isEdition" type="button" class="btn grow" (click)="handleEditionFields()">
+              <i class="fa fa-pencil fa-2x " aria-hidden="true"></i>
             </button>
-          </div>
+          </h2>
+          <p class="card-text">{{userDescription}}</p>
         </div>
-        <div class="row">
-          <div class="col-12">
-            <textarea class="form-control" id="description" rows="3" name="description"
-              [(ngModel)]="userDescription"></textarea>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div *ngIf="isEdition">
-      <hr>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item list-item" *ngFor="let post of getTopPosts();">
-          <div class="row">
-            <div class="col">
-              <p class="font-weight-bold">{{post.title}}
-              <p>
-              <p>{{post.body}}</p>
+        <div *ngIf="isEditingFileds">
+          <div class="row d-flex justify-content-center">
+            <div class="col-6">
+              <input id="name" name="name" class="form-control" [(ngModel)]="userFullName">
             </div>
-          </div>
-          <div class="row d-flex justify-content-end">
             <div class="col-2">
-              <button type="button" class="btn" (click)="removePost(post)">
-                <i class="fa fa-trash-o fa-2x" aria-hidden="true"></i>
+              <button type="button " class="btn grow" (click)="saveChanges()">
+                <i class="fa fa fa-floppy-o fa-2x " aria-hidden="true"></i>
               </button>
             </div>
           </div>
-        </li>
-      </ul>
-      <div class="card-body">
-        <a (click)="previewPost()" class="card-link">Preview post</a>
-        <a (click)="nextPost()" class="card-link">Next post</a>
+          <div class="row">
+            <div class="col-12">
+              <textarea class="form-control" id="description" rows="3" name="description"
+                [(ngModel)]="userDescription"></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="isEdition">
+        <hr>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item list-item" *ngFor="let post of getTopPosts();">
+            <div class="row">
+              <div class="col">
+                <p class="font-weight-bold">{{post.title}}
+                <p>
+                <p>{{post.body}}</p>
+              </div>
+            </div>
+            <div class="row d-flex justify-content-end">
+              <div class="col-2">
+                <button type="button" class="btn grow" (click)="removePost(post)">
+                  <i class="fa fa-trash-o fa-2x" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <div class="card-body">
+          <a (click)="previewPost()" class="card-link">Preview post</a>
+          <a (click)="nextPost()" class="card-link">Next post</a>
+        </div>
       </div>
     </div>
   </div>
