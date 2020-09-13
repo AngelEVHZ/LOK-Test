@@ -1,10 +1,10 @@
 <app-header></app-header>
 <div class="container-fluid">
   <div class="container">
-    <div class="row mt-5">
+    <div class="row mt-5 ">
       <div class="col">
-        <div class="d-flex flex-wrap">
-          <div class="p-3" *ngFor="let user of users;let i = index" style="width: 18rem">
+        <div class="d-flex flex-wrap d-flex justify-content-center">
+          <div class="p-3" *ngFor="let user of users;let i = index" style="width: 20rem">
             <app-profile [user]="user" [index]="i" (click)="editUser(user)"></app-profile>
           </div>
         </div>
@@ -12,5 +12,5 @@
     </div>
   </div>
 
-  <app-aside-bar [isHidden]="!showAsideBar" (hideBar)="hideBar()"></app-aside-bar>
+  <app-aside-bar [isHidden]="!showAsideBar" (hideBar)="hideBar()" (handleUserChange)="handleUserChange($event)"></app-aside-bar>
 </div>

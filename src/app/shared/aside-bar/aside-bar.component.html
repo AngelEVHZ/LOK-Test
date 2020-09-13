@@ -3,7 +3,7 @@
 
   <div class="row">
   <div class="close">
-    <button type="button" class="btn " (click)="hide()">
+    <button type="button" class="btn icon" (click)="hide()">
       <i class="fa fa-window-close fa-2x" aria-hidden="true"></i>
     </button>
   </div>
@@ -11,7 +11,7 @@
   <div class="row">
     <div class="col-12">
       <div *ngIf="!isHidden && user">
-        <app-profile [user]="user" [isEdition]="true"></app-profile>
+        <app-profile [user]="user" [isEdition]="true" (handleUserChange)="onChange($event)"></app-profile>
       </div>
     </div>
   </div>

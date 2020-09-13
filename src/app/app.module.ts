@@ -9,7 +9,7 @@ import { AlbumComponent } from './components/album/album.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AuthenticationService } from './services/authentication.service';
 import { BusyComponent } from "./shared/busy/busy.component";
-
+import { FormsModule } from '@angular/forms';
 import { HttpClientInterceptor } from './config/http.interceptor';
 import { HeaderComponent } from './shared/header/header.component';
 import { ProfileComponent } from './shared/profile/profile.component';
@@ -30,6 +30,7 @@ import { AsideBarComponent } from './shared/aside-bar/aside-bar.component';
     HttpClientModule,
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     ReactiveFormsModule
   ],
   providers: [

@@ -21,6 +21,9 @@ export class HomeComponent implements OnInit {
 
   async fetchUsers() {
     this.users = await this.userService.getUsers();
+    this.users.forEach(user => {
+      user.description = "Some quick example text to build on the card title and make up the bulk of the card's content.";
+    });
   }
 
 
@@ -31,5 +34,16 @@ export class HomeComponent implements OnInit {
 
   hideBar() {
     this.showAsideBar = false;
+  }
+
+  handleUserChange(userEdited: UserDto) {
+    let index = this.users.findIndex(user => user.id == userEdited.id);
+    this.users[index] = {
+      ...this.users[index],
+      last_name: userEdited.last_name,
+      first_name: userEdited.first_name,
+      description: userEdited.description,
+      edited: true,
+    }
   }
 }

@@ -8,6 +8,7 @@ import { UserDto } from "@dto/user/user.dto";
 export class AsideBarComponent implements OnInit {
   @Input() isHidden: boolean;
   @Output() hideBar = new EventEmitter<boolean>();
+  @Output() handleUserChange = new EventEmitter<UserDto>();
 
   user: UserDto;
 
@@ -22,6 +23,10 @@ export class AsideBarComponent implements OnInit {
 
   setUser(user: UserDto) {
     this.user = user;
+  }
+
+  onChange(user: UserDto) {
+    this.handleUserChange.emit(user);
   }
 
 }
