@@ -20,7 +20,6 @@ export class AlbumComponent implements OnInit {
 
   async ngOnInit() {
     this.fetchUsers();
-  
   }
 
   async fetchUsers(page?: number) {
@@ -38,6 +37,7 @@ export class AlbumComponent implements OnInit {
     const response = await this.userService.getAlbum(user.id);
     const album = await this.userService.getPhotos(response[0]);
     this.currentAlbum = album;
+    document.getElementById( 'end-mosaic' ).scrollIntoView();
     console.log(this.currentAlbum);
   }
 

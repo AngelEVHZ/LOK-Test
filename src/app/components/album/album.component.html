@@ -3,18 +3,13 @@
   <div class="container">
     <div class="row mt-5 ">
       <div class="col-12">
-       <app-carousel [list]="users" (onItemClick)="fetchAlbum($event)"></app-carousel>
+        <app-carousel [list]="users" (onItemClick)="fetchAlbum($event)"></app-carousel>
       </div>
     </div>
-    <div class="row ">
-      <div class="col">
-      <div *ngIf="currentAlbum">
-        <app-mosaic [album]="currentAlbum" ></app-mosaic>
-      </div>
-
-      </div>
+    <div>
+      <app-mosaic [album]="currentAlbum"></app-mosaic>
     </div>
-
+    <div id="end-mosaic"></div>
   </div>
 </div>
 <app-footer></app-footer>

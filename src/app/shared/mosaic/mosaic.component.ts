@@ -11,17 +11,37 @@ export class MosaicComponent implements OnInit {
   constructor() { }
   iterations = [];
   size: number = 5;
+  currentPage: number = 0;
+  totalPages: number;
+  showMosaic: boolean = false;
   ngOnInit(): void {
-    this.iterations = [];
-    const num = Math.floor(this.album.photos.length / this.size);
-    for (let i = 1; i <= num; i++) {
-      this.iterations.push(i);
-    };
   }
 
-  getPhotos(iteration) {
-    const from = this.size * (iteration - 1);
-    const to = this.size * iteration;
+
+  ngOnChanges() {
+    this.showMosaic = this.album && this.album.photos && this.album.photos.length > 0;
+    if (this.showMosaic) {
+      this.currentPage = 0;
+      this.totalPages = Math.floor(this.album.photos.length / this.size);
+
+    }
+  }
+
+  previewPage() {
+    if (this.showMosaic && this.currentPage > 0) {
+      this.currentPage--;
+    }
+  }
+
+  nextPage() {
+    if (this.showMosaic && this.currentPage < (this.totalPages - 1)) {
+      this.currentPage++;
+    }
+  }
+
+  getPhotos() {
+    const from = this.size * (this.currentPage);
+    const to = this.size * (this.currentPage + 1);
     return this.album.photos.filter((photo, index) => {
       return index >= from && index < to;
     });
@@ -49,8 +69,8 @@ export class MosaicComponent implements OnInit {
     return classname;
   }
 
-  getMosaicClass(index) {
-    let iter = index % 3;
+  getMosaicClass() {
+    let iter = this.currentPage % 3;
     let classname = "";
     switch (iter) {
       case 0:

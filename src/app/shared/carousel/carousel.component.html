@@ -1,8 +1,26 @@
-<ul class="list-group list-group-horizontal">
-  <li class="list-group-item"  *ngFor="let item of list;let i = index" (click)="selectItem(item)">
-    <div>
-      <img class="rounded mx-auto d-block my-4" [src]="item.avatar">
-      <h5 class="card-text">{{item.first_name + ' ' + item.last_name}}</h5>
-    </div>
-  </li>
-</ul>
+<!-- Medium Screens  -->
+<div class="carousel  d-none d-md-block">
+  <ul class="shadow p-3 mb-5 bg-white rounded list-group list-group-horizontal  row ">
+    <li
+      class="list-group-item col-md-4  col-lg-2 d-flex justify-content-center"
+      *ngFor="let item of list;let i = index" (click)="selectItem(item)">
+      <div class="">
+        <img class=" grow rounded mx-auto d-block my-4" [src]="item.avatar">
+        <h5 [class]="'card-text text-center ' +  ((item.id == selectedId) ? 'font-weight-bold' : '')">{{item.first_name + ' ' + item.last_name}}</h5>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<!-- Small Screens -->
+<div class="carousel d-md-none d-block">
+  <ul class="scroll list-group list-group-horizontal flex-nowrap">
+    <li class="d-flex justify-content-center grow list-group-item shadow-sm p-3 mb-5 bg-white rounded"
+      *ngFor="let item of list;let i = index" (click)="selectItem(item)">
+      <div>
+        <img class=" rounded mx-auto d-block my-4" [src]="item.avatar">
+        <h5 [class]="'card-text text-center ' +  ((item.id == selectedId) ? 'font-weight-bold' : '')">{{item.first_name + ' ' + item.last_name}}</h5>
+      </div>
+    </li>
+  </ul>
+</div>

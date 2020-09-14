@@ -1,9 +1,19 @@
-<div class="row">
-  <div class="col-12">
-    <div [class]="'mosaic-container ' + getMosaicClass(iteration) " *ngFor="let iteration of iterations">
-      <div [class]=" 'tile grow '+ getClass(i) " *ngFor="let photo of getPhotos(iteration);let i = index">
+<div class="row content d-flex justify-content-center ">
+  <div class="col-12" *ngIf="showMosaic">
+    <div [class]="'mosaic-container ' + getMosaicClass() ">
+      <div [class]=" 'tile grow '+ getClass(i) " *ngFor="let photo of getPhotos();let i = index">
         <img class=" mx-auto d-block mosaic" [src]="photo.url">
       </div>
     </div>
+  </div>
+</div>
+<div class="row d-flex justify-content-center my-3">
+  <div class="col-md-2">
+    <button class="btn grow " (click)="previewPage()" [disabled]="this.currentPage <= 0">
+      <i class="fa fa-chevron-left fa-4x" aria-hidden="true"></i> </button>
+  </div>
+  <div class="col-md-2">
+    <button class="btn grow" (click)="nextPage()" [disabled]="this.currentPage >= (this.totalPages - 1)">
+      <i class="fa fa-chevron-right fa-4x" aria-hidden="true"></i></button>
   </div>
 </div>
