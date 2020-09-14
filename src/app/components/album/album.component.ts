@@ -34,8 +34,8 @@ export class AlbumComponent implements OnInit {
     const response = await this.userService.getAlbum(user.id);
     const album = await this.userService.getPhotos(response[0]);
     this.currentAlbum = album;
-    if (scroll)
-    document.getElementById('end-mosaic').scrollIntoView();
+    // if (scroll)
+    // document.getElementById('end-mosaic').scrollIntoView();
   }
 
 }
