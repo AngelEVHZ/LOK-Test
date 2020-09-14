@@ -1,7 +1,7 @@
 <div class="row content d-flex justify-content-center ">
-  <div class="col-12 d-flex justify-content-center" *ngIf="showMosaic">
+  <div class="col-12 d-flex justify-content-center " *ngIf="showMosaic">
     <div [class]="'mosaic-container ' + getMosaicClass() ">
-      <div [class]=" 'tile grow '+ getClass(i) " *ngFor="let photo of getPhotos();let i = index">
+      <div [class]=" 'fadeIn tile grow '+ getClass(i) " *ngFor="let photo of getPhotos();let i = index">
         <img class=" mx-auto d-block mosaic" [src]="photo.url">
       </div>
     </div>

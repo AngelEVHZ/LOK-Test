@@ -1,4 +1,4 @@
-<div *ngIf="user && delay">
+<div *ngIf="user && delay" class="profile">
   <div  [class]=" isEdition ? 'fadeIn' : 'fadeIn grow'" [style]="'animation-delay: ' + delay + ';'  ">
     <div class="shadow p-3 mb-5 bg-white card-content">
       <img class="card-img-top rounded mx-auto d-block my-4" [src]="user.avatar">

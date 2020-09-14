@@ -92,3 +92,19 @@
       margin-bottom: 1rem;
   }
 }
+
+
+.fadeIn {
+  opacity: 0;
+  animation-delay: 0.3s;
+  animation-name: fadeInAnim;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+
+@keyframes fadeInAnim {
+  100% {
+    opacity: 1;
+  }
+}

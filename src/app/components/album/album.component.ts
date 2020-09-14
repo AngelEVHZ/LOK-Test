@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {UserService} from "@services/user.service";
-import {AlbumDto} from "@dto/album/album.dto";
+import { UserService } from "@services/user.service";
+import { AlbumDto } from "@dto/album/album.dto";
 import { UserDto } from '@dto/user/user.dto';
 import { PaginationUserDto } from '@dto/user/pagination-user.dto';
 
@@ -16,8 +16,6 @@ export class AlbumComponent implements OnInit {
   totalPages: number;
   constructor(private readonly userService: UserService) { }
 
-
-
   async ngOnInit() {
     this.fetchUsers();
   }
@@ -28,22 +26,16 @@ export class AlbumComponent implements OnInit {
     this.totalPages = paginationUsers.total_pages;
     this.users = paginationUsers.data;
     if (this.users.length > 0)
-      await this.fetchAlbum(this.users[0]);
+      await this.fetchAlbum(this.users[0], false);
   }
 
-
-  async fetchAlbum(user) {
+  async fetchAlbum(user, scroll:boolean = true) {
     this.currentAlbum = null;
     const response = await this.userService.getAlbum(user.id);
     const album = await this.userService.getPhotos(response[0]);
     this.currentAlbum = album;
-    document.getElementById( 'end-mosaic' ).scrollIntoView();
-    console.log(this.currentAlbum);
+    if (scroll)
+    document.getElementById('end-mosaic').scrollIntoView();
   }
-
-
-
-
-
 
 }

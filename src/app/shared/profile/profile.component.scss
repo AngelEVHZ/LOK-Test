@@ -1,28 +1,30 @@
-.rounded {
-  border-radius: 50% !important;
-  max-width: 150px;
-  max-height: 150px;
-}
-
-.fadeIn {
-  opacity: 0;
-  animation-name: example;
-  animation-duration: 2s;
-  animation-fill-mode: forwards;
- 
-}
-
-@keyframes example {
-  100% {
-    opacity: 1;
-    left:0px;
+.profile {
+  .rounded {
+    border-radius: 50% !important;
+    max-width: 150px;
+    max-height: 150px;
   }
-}
 
-.list-item{
-  left:-18px;
-  opacity: 0;
-  animation-name: example;
-  animation-duration: 0.5s;
-  animation-fill-mode: forwards;
+  .fadeIn {
+    opacity: 0;
+    animation-name: fadeLeft;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+  
+  }
+
+  @keyframes fadeLeft {
+    100% {
+      opacity: 1;
+      left:0px;
+    }
+  }
+
+  .list-item{
+    left:-18px;
+    opacity: 0;
+    animation-name: fadeLeft;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+  }
 }
