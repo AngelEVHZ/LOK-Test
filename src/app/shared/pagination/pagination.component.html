@@ -1,7 +1,7 @@
 <nav aria-label="...">
-  <ul class="pagination pagination-lg">
-    <li [class]="disabledPage(page)  ? 'page-item  disabled' : 'page-item ' " *ngFor="let page of pages" (click)="selectPage(page)">
-      <a class="page-link">{{page}}</a>
+  <ul class="pagination pagination-lg ">
+    <li [class]="disabledPage(page)  ? 'page-item  disabled' : 'page-item can-press' " *ngFor="let page of pages" (click)="selectPage(page)">
+      <a class="page-link bg-dark">{{page}}</a>
     </li>
   </ul>
 </nav>
