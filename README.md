@@ -26,6 +26,6 @@ ng serve
 
 ![Home](/img/home.png)
 
-![Side](/img/side.png)
+![Side](/img/Side.png)
 
 ![Album](/img/Album.png)
