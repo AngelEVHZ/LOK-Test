@@ -1,6 +1,9 @@
 .content {
   min-height: 500px;
 }
+p{
+  font-size: 35px !important;
+}
 .mosaic-container{
   display: grid;
   grid-template-columns: repeat(8, 1fr);
@@ -107,4 +110,20 @@
   100% {
     opacity: 1;
   }
+}
+
+
+@keyframes fadeLeft {
+  100% {
+    opacity: 1;
+    left:0px;
+  }
+}
+
+.item{
+  left:-18px;
+  opacity: 0;
+  animation-name: fadeLeft;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
 }

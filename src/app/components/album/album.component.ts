@@ -14,6 +14,7 @@ export class AlbumComponent implements OnInit {
   currentAlbum: AlbumDto;
   users: Array<UserDto>;
   totalPages: number;
+  selectedUser: UserDto;
   constructor(private readonly userService: UserService) { }
 
   async ngOnInit() {
@@ -30,6 +31,7 @@ export class AlbumComponent implements OnInit {
   }
 
   async fetchAlbum(user, scroll:boolean = true) {
+    this.selectedUser = user;
     this.currentAlbum = null;
     const response = await this.userService.getAlbum(user.id);
     const album = await this.userService.getPhotos(response[0]);

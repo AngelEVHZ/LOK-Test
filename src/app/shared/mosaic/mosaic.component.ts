@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { AlbumDto } from '@dto/album/album.dto';
+import { UserDto } from '@dto/user/user.dto';
 
 @Component({
   selector: 'app-mosaic',
@@ -8,6 +9,7 @@ import { AlbumDto } from '@dto/album/album.dto';
 })
 export class MosaicComponent implements OnInit {
   @Input() album: AlbumDto;
+  @Input() user: UserDto;
   constructor() { }
   iterations = [];
   size: number = 5;

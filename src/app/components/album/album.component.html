@@ -1,13 +1,17 @@
 <app-header [currentPage]="'album'"></app-header>
-<div class="container-fluid mb-5" id="top-page">
-  <div class="container">
-    <div class="row mt-5 ">
-      <div class="col-12">
-        <app-carousel [list]="users" (onItemClick)="fetchAlbum($event)"></app-carousel>
+<div>
+  <div class="container-fluid mb-5" id="top-page">
+    <div class="container">
+      <div class="row mt-5 ">
+        <div class="col-12">
+          <app-carousel [list]="users" (onItemClick)="fetchAlbum($event)"></app-carousel>
+        </div>
       </div>
     </div>
-    <div class="mt-5">
-      <app-mosaic [album]="currentAlbum"></app-mosaic>
+  </div>
+  <div class="bg-gradient">
+    <div class="pb-5  ">
+      <app-mosaic [album]="currentAlbum " [user]="selectedUser"></app-mosaic>
     </div>
     <div id="end-mosaic"></div>
   </div>
