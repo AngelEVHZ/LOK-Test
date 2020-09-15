@@ -1,7 +1,11 @@
 # Prueba técnica de Frontend
 
-## Screenshot
+## Screenshots
 ![Login](/img/Login.png)
+
+![Home](/img/home.png)
+
+![Album](/img/Album.png)
 
 ## Instrucciones para correr la aplicación:
 
